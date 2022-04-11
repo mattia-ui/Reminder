@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
        view.addGestureRecognizer(tap)
     }
@@ -40,5 +41,20 @@ class ViewController: UIViewController {
      //Causes the view (or one of its embedded text fields) to resign the first responder status.
      view.endEditing(true)
  }
+    
+    func setup(){
+        SaveButton.layer.borderWidth = 1
+        SaveButton.layer.borderColor = UIColor.black.cgColor
+        SaveButton.layer.backgroundColor = UIColor.random().cgColor
+        SaveButton.layer.cornerRadius = 10
+        SaveButton.layer.masksToBounds = false
+        SaveButton.layer.shadowColor = UIColor.black
+            .cgColor
+        SaveButton.layer.shadowOpacity = 0.5
+        SaveButton.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        SaveButton.layer.shadowRadius = 4.0
+        SaveButton.titleLabel?.textColor = .black
+    }
+    
 }
 

@@ -15,6 +15,8 @@ class ReminderDetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var TitleField: UITextField!
     @IBOutlet weak var ModificaBtn: UIButton!
     @IBOutlet weak var SalvaButton: UIButton!
+    @IBOutlet weak var DeleteButton: UIButton!
+    @IBOutlet weak var ShareButton: UIButton!
     
     var diction : Dictionary<String,AnyObject> = ["titolo" : Reminder()]
     var titoloString: String?
@@ -52,8 +54,6 @@ class ReminderDetailViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func salva(_ sender: Any) {
-        
-        //CoreDataManager.storeObj(title: TitleField.text ?? "", description: DescriptionField.text ?? "")
         
         SalvaButton.isHidden = true
         SalvaButton.isEnabled = false
@@ -102,6 +102,15 @@ class ReminderDetailViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func deleteReminder(_ sender: Any) {
+        
+        CoreDataManager.clearObject(title: titoloString ?? "")
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+      
+    }
+    
+    
     func setUp(){
         
         SalvaButton.isHidden = true
@@ -137,6 +146,28 @@ class ReminderDetailViewController: UIViewController, UITextFieldDelegate {
         SalvaButton.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
         SalvaButton.layer.shadowRadius = 4.0
         SalvaButton.titleLabel?.textColor = .black
+        
+        ShareButton.layer.borderWidth = 1
+        ShareButton.layer.borderColor = UIColor.black.cgColor
+        ShareButton.layer.cornerRadius = 10
+        ShareButton.clipsToBounds = true
+        ShareButton.layer.shadowColor = UIColor.black
+            .cgColor
+        ShareButton.layer.shadowOpacity = 0.5
+        ShareButton.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        ShareButton.layer.shadowRadius = 4.0
+        ShareButton.layer.masksToBounds = false
+        
+        DeleteButton.layer.borderWidth = 1
+        DeleteButton.layer.borderColor = UIColor.black.cgColor
+        DeleteButton.layer.cornerRadius = 10
+        DeleteButton.clipsToBounds = true
+        DeleteButton.layer.shadowColor = UIColor.black
+            .cgColor
+        DeleteButton.layer.shadowOpacity = 0.5
+        DeleteButton.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        DeleteButton.layer.shadowRadius = 4.0
+        DeleteButton.layer.masksToBounds = false
     }
     
 }

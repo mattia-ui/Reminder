@@ -142,9 +142,8 @@ class CoreDataManager: NSObject {
     class func updateEvent( title: String, titleEdited: String, descrEdited: String) {
         
             let context = getContext()
-            var reminder: RemindersItem = fetchObj(selectedScopeIdx: 0, targetText: title)[0]
         
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Reminders")
+            //let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Reminders")
             do{
                 if let reminder = try fetchObjFor(selectedScopeIdx: 0, targetText: title) as? [NSManagedObject] {
                     
@@ -158,6 +157,22 @@ class CoreDataManager: NSObject {
         }
     }
     
-    
+    class func clearObject(title: String){
+        
+        let context = getContext()
+       
+        //let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Reminders")
+        do{
+            if let reminder = try fetchObjFor(selectedScopeIdx: 0, targetText: title) as? [NSManagedObject] {
+                
+                context.delete(reminder[0] as NSManagedObject)
+                try context.save()
+            }
+         }
+     catch let error as NSError {
+        print("Could not fetch \(error), \(error.userInfo)")
+    }
+        
+    }
     
 }

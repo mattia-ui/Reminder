@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -48,7 +47,9 @@
                                     <constraint firstAttribute="width" constant="115" id="qLg-Qh-lwa"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Modifica"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Modifica">
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="modifica:" destination="fWD-vY-iUJ" eventType="touchUpInside" id="igF-C7-ZKy"/>
                                 </connections>
@@ -59,17 +60,25 @@
                                     <constraint firstAttribute="width" constant="115" id="bS4-lr-uqR"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Salva"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Salva">
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="salva:" destination="fWD-vY-iUJ" eventType="touchUpInside" id="eVR-hD-c6H"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiB-fj-paL">
-                                <rect key="frame" x="154" y="724" width="107" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="db1-Do-alD">
+                                <rect key="frame" x="162" y="620" width="90" height="90"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" imagePlacement="bottom" title="Share">
-                                    <imageReference key="image" image="square.and.arrow.up" catalog="system" symbolScale="medium"/>
-                                </buttonConfiguration>
+                                <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
+                                <connections>
+                                    <action selector="deleteReminder:" destination="fWD-vY-iUJ" eventType="touchUpInside" id="G33-wz-qhy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiB-fj-paL">
+                                <rect key="frame" x="162" y="718" width="90" height="90"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system"/>
                                 <connections>
                                     <action selector="shareTextButton:" destination="fWD-vY-iUJ" eventType="touchUpInside" id="L8o-oO-zg6"/>
                                 </connections>
@@ -82,20 +91,23 @@
                             <constraint firstItem="2yG-gA-62K" firstAttribute="leading" secondItem="SQp-ri-G4z" secondAttribute="leading" id="BQf-oI-EOU"/>
                             <constraint firstItem="2yG-gA-62K" firstAttribute="trailing" secondItem="SQp-ri-G4z" secondAttribute="trailing" id="DZf-iZ-M2Q"/>
                             <constraint firstItem="h2u-Rm-Oc5" firstAttribute="leading" secondItem="Cs9-dj-qkL" secondAttribute="leading" constant="22" id="I13-al-IpQ"/>
+                            <constraint firstItem="Cs9-dj-qkL" firstAttribute="trailing" secondItem="db1-Do-alD" secondAttribute="trailing" constant="162" id="JPo-D7-fgf"/>
                             <constraint firstItem="h2u-Rm-Oc5" firstAttribute="trailing" secondItem="2yG-gA-62K" secondAttribute="trailing" id="MBL-P1-DID"/>
                             <constraint firstItem="h2u-Rm-Oc5" firstAttribute="top" secondItem="Cs9-dj-qkL" secondAttribute="top" constant="79" id="Ni5-LV-jZH"/>
+                            <constraint firstItem="CiB-fj-paL" firstAttribute="top" secondItem="db1-Do-alD" secondAttribute="bottom" constant="8" id="ONL-zu-MWo"/>
                             <constraint firstItem="h2u-Rm-Oc5" firstAttribute="leading" secondItem="2yG-gA-62K" secondAttribute="leading" id="RBa-f9-vbO"/>
                             <constraint firstItem="V6r-0i-Sg4" firstAttribute="baseline" secondItem="1W9-Z7-29c" secondAttribute="firstBaseline" id="U9S-VZ-nUu"/>
-                            <constraint firstItem="Cs9-dj-qkL" firstAttribute="bottom" secondItem="CiB-fj-paL" secondAttribute="bottom" constant="70" id="UTg-fy-FHH"/>
-                            <constraint firstItem="CiB-fj-paL" firstAttribute="leading" secondItem="1W9-Z7-29c" secondAttribute="trailing" id="WxI-pe-Xcf"/>
-                            <constraint firstItem="V6r-0i-Sg4" firstAttribute="leading" secondItem="CiB-fj-paL" secondAttribute="trailing" id="bSv-OY-vdN"/>
+                            <constraint firstItem="Cs9-dj-qkL" firstAttribute="bottom" secondItem="CiB-fj-paL" secondAttribute="bottom" constant="34" id="UTg-fy-FHH"/>
+                            <constraint firstItem="CiB-fj-paL" firstAttribute="leading" secondItem="1W9-Z7-29c" secondAttribute="trailing" constant="8" id="WxI-pe-Xcf"/>
+                            <constraint firstItem="V6r-0i-Sg4" firstAttribute="leading" secondItem="CiB-fj-paL" secondAttribute="trailing" constant="9" id="bSv-OY-vdN"/>
                             <constraint firstItem="1W9-Z7-29c" firstAttribute="top" secondItem="aBp-q3-TyP" secondAttribute="bottom" constant="73" id="dqu-fB-9fO"/>
                             <constraint firstItem="Cs9-dj-qkL" firstAttribute="trailing" secondItem="aBp-q3-TyP" secondAttribute="trailing" constant="22" id="fC6-ge-73E"/>
-                            <constraint firstItem="CiB-fj-paL" firstAttribute="top" secondItem="aBp-q3-TyP" secondAttribute="bottom" constant="112" id="l6X-43-VtU"/>
+                            <constraint firstItem="CiB-fj-paL" firstAttribute="top" secondItem="aBp-q3-TyP" secondAttribute="bottom" constant="106" id="l6X-43-VtU"/>
                             <constraint firstItem="Cs9-dj-qkL" firstAttribute="bottom" secondItem="1W9-Z7-29c" secondAttribute="bottom" constant="92" id="mdO-ak-4D0"/>
                             <constraint firstItem="aBp-q3-TyP" firstAttribute="top" secondItem="h2u-Rm-Oc5" secondAttribute="bottom" constant="53" id="o9x-q0-xU1"/>
                             <constraint firstItem="Cs9-dj-qkL" firstAttribute="trailing" secondItem="V6r-0i-Sg4" secondAttribute="trailing" constant="38" id="rcy-ja-ZP2"/>
                             <constraint firstItem="h2u-Rm-Oc5" firstAttribute="centerY" secondItem="2yG-gA-62K" secondAttribute="centerY" id="sXI-gi-yFR"/>
+                            <constraint firstItem="db1-Do-alD" firstAttribute="leading" secondItem="Cs9-dj-qkL" secondAttribute="leading" constant="162" id="t0u-DC-ukW"/>
                             <constraint firstItem="Cs9-dj-qkL" firstAttribute="trailing" secondItem="h2u-Rm-Oc5" secondAttribute="trailing" constant="22" id="vVe-5u-B6p"/>
                             <constraint firstItem="aBp-q3-TyP" firstAttribute="leading" secondItem="Cs9-dj-qkL" secondAttribute="leading" constant="22" id="xFt-6R-zmq"/>
                             <constraint firstItem="SQp-ri-G4z" firstAttribute="centerY" secondItem="004-Ch-n36" secondAttribute="centerY" id="xKZ-JH-as5"/>
@@ -104,10 +116,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="O4y-NH-Dyf"/>
                     <connections>
+                        <outlet property="DeleteButton" destination="db1-Do-alD" id="vx9-UA-GqM"/>
                         <outlet property="DescriptionField" destination="SQp-ri-G4z" id="A11-Wo-d0y"/>
                         <outlet property="DescrizioneDetail" destination="aBp-q3-TyP" id="Oms-Ky-DOx"/>
                         <outlet property="ModificaBtn" destination="V6r-0i-Sg4" id="aW5-gZ-pOr"/>
                         <outlet property="SalvaButton" destination="1W9-Z7-29c" id="2SC-D9-hhL"/>
+                        <outlet property="ShareButton" destination="CiB-fj-paL" id="j6Q-dZ-Xve"/>
                         <outlet property="TitleField" destination="2yG-gA-62K" id="8kN-iS-vxD"/>
                         <outlet property="TitoloDetail" destination="h2u-Rm-Oc5" id="pyD-qP-HAf"/>
                     </connections>
@@ -228,7 +242,9 @@
                                 <rect key="frame" x="159" y="440" width="97" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Salva"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Salva">
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="saveReminder:" destination="wP5-0a-TWZ" eventType="touchUpInside" id="HrW-Lh-MhQ"/>
                                 </connections>
@@ -268,6 +284,10 @@
     </scenes>
     <resources>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
