@@ -33,7 +33,7 @@ class CoreDataManager: NSObject {
     }
     
     ///store obj into core data
-    class func storeObj(title:String,description:String) {
+    class func storeObj(title:String,description:String,rem: Reminder?=nil) {
         let context = getContext()
         
         let entity = NSEntityDescription.entity(forEntityName: "Reminder", in: context)
@@ -88,6 +88,37 @@ class CoreDataManager: NSObject {
         
         return aray
     }
+    //questo metodo è per l'update
+    class func fetchObjFor(selectedScopeIdx:Int?=nil,targetText:String?=nil) -> [Reminder] {
+        
+        let prova = [Reminder]()
+        let fetchRequest:NSFetchRequest<Reminder> = Reminder.fetchRequest()
+        
+        if selectedScopeIdx != nil && targetText != nil{
+            
+            var filterKeyword = ""
+            switch selectedScopeIdx! {
+            case 0:
+                filterKeyword = "titolo"
+            default:
+                filterKeyword = "descrizione"
+            }
+
+            var predicate = NSPredicate(format: "\(filterKeyword) contains[c] %@", targetText!)
+        
+            fetchRequest.predicate = predicate
+        }
+        
+        do {
+            let fetchResult = try getContext().fetch(fetchRequest)
+            return fetchResult
+            }
+        catch {
+            print(error.localizedDescription)
+        }
+        
+        return prova
+    }
 
     ///delete all the data in core data
     class func cleanCoreData() {
@@ -112,19 +143,19 @@ class CoreDataManager: NSObject {
         
             let context = getContext()
             var reminder: RemindersItem = fetchObj(selectedScopeIdx: 0, targetText: title)[0]
-            
-            print(reminder.title)
-            reminder.title = titleEdited
-            reminder.description = descrEdited
-            print(reminder.title)
-            do {
-                try context.save()//self.storeObj(title: reminder.title ?? "", description: reminder.description ?? "")
-            }catch {
-                print(error.localizedDescription)
-            }
         
-        
-        
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Reminders")
+            do{
+                if let reminder = try fetchObjFor(selectedScopeIdx: 0, targetText: title) as? [NSManagedObject] {
+                    
+                    reminder[0].setValue(titleEdited, forKey: "titolo")
+                    reminder[0].setValue(descrEdited, forKey: "descrizione")
+                    try context.save()
+                }
+             }
+         catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
     }
     
     
