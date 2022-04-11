@@ -168,6 +168,14 @@ class ReminderDetailViewController: UIViewController, UITextFieldDelegate {
         DeleteButton.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
         DeleteButton.layer.shadowRadius = 4.0
         DeleteButton.layer.masksToBounds = false
+        
+        TitoloDetail.layer.borderColor = UIColor.random().cgColor
+        TitoloDetail.layer.cornerRadius = 10
+        TitoloDetail.layer.borderWidth = 1
+        
+        DescrizioneDetail.layer.borderColor = UIColor.random().cgColor
+        DescrizioneDetail.layer.cornerRadius = 10
+        DescrizioneDetail.layer.borderWidth = 1
     }
     
 }
