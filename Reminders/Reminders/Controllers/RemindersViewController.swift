@@ -30,8 +30,16 @@ class RemindersViewController: UIViewController,UITableViewDataSource, UITableVi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("NotificationDismiss"), object: nil)
+
+    }
+    
+    @objc func methodOfReceivedNotification(notification: Notification) {
+        updateData()
+        RemindersTable.reloadData()
         
     }
+
     
     func updateData() {
         remindersArray = CoreDataManager.fetchObj()

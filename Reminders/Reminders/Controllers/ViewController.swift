@@ -33,15 +33,8 @@ class ViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: Notification.Name("NotificationDismiss"), object: nil)
 
-            //if let firstVC = presentingViewController as? RemindersViewController {
-        
-        let firstVC = presentingViewController as? RemindersViewController
-//                DispatchQueue.main.async {
-        firstVC?.updateData()
-        firstVC?.RemindersTable.reloadData()
-//                }
-//            }
     }
  
  @objc func dismissKeyboard() {
