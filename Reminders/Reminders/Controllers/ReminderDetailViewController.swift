@@ -18,7 +18,6 @@ class ReminderDetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var DeleteButton: UIButton!
     @IBOutlet weak var ShareButton: UIButton!
     
-    var diction : Dictionary<String,AnyObject> = ["titolo" : Reminder()]
     var titoloString: String?
     var descrizioneString: String?
     
@@ -29,7 +28,6 @@ class ReminderDetailViewController: UIViewController, UITextFieldDelegate {
         DescrizioneDetail.text = descrizioneString
         setUp()
         
-//        let aSelector : Selector = "lblTapped"
         let aSelector : Selector = Selector(("lblTapped"))
         let tapGesture = UITapGestureRecognizer(target: self, action: aSelector)
         tapGesture.numberOfTapsRequired = 1
@@ -64,16 +62,19 @@ class ReminderDetailViewController: UIViewController, UITextFieldDelegate {
     }
     
     func lblTapped(){
-            DescrizioneDetail.isHidden = true
-            DescriptionField.isHidden = false
-            DescriptionField.text = DescrizioneDetail.text
+        
+        DescrizioneDetail.isHidden = true
+        DescriptionField.isHidden = false
+        DescriptionField.text = DescrizioneDetail.text
             
-            TitoloDetail.isHidden = true
-            TitleField.isHidden = false
-            TitleField.text = TitoloDetail.text
+        TitoloDetail.isHidden = true
+        TitleField.isHidden = false
+        TitleField.text = TitoloDetail.text
+        
         }
 
     func fldTapped(){
+        
         DescrizioneDetail.isHidden = false
         DescriptionField.isHidden = true
         DescrizioneDetail.text = DescriptionField.text
@@ -81,6 +82,7 @@ class ReminderDetailViewController: UIViewController, UITextFieldDelegate {
         TitoloDetail.isHidden = false
         TitleField.isHidden = true
         TitoloDetail.text = TitleField.text
+        
     }
     
     

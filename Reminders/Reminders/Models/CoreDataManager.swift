@@ -88,6 +88,7 @@ class CoreDataManager: NSObject {
         
         return aray
     }
+    
     //questo metodo è per l'update
     class func fetchObjFor(selectedScopeIdx:Int?=nil,targetText:String?=nil) -> [Reminder] {
         
@@ -143,7 +144,6 @@ class CoreDataManager: NSObject {
         
             let context = getContext()
         
-            //let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Reminders")
             do{
                 if let reminder = try fetchObjFor(selectedScopeIdx: 0, targetText: title) as? [NSManagedObject] {
                     
@@ -161,7 +161,6 @@ class CoreDataManager: NSObject {
         
         let context = getContext()
        
-        //let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Reminders")
         do{
             if let reminder = try fetchObjFor(selectedScopeIdx: 0, targetText: title) as? [NSManagedObject] {
                 
