@@ -41,6 +41,31 @@ class ReminderDetailViewController: UIViewController, UITextFieldDelegate {
         tapGesture.numberOfTapsRequired = 1
         DescrizioneDetail.addGestureRecognizer(tapGesture)
         TitoloDetail.addGestureRecognizer(tapGesture)
+        
+        ModificaBtn.layer.borderWidth = 1
+        ModificaBtn.layer.borderColor = UIColor.black.cgColor
+        ModificaBtn.layer.backgroundColor = UIColor.random().cgColor
+        ModificaBtn.layer.cornerRadius = 10
+        ModificaBtn.layer.masksToBounds = false
+        ModificaBtn.layer.shadowColor = UIColor.black
+            .cgColor
+        ModificaBtn.layer.shadowOpacity = 0.5
+        ModificaBtn.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        ModificaBtn.layer.shadowRadius = 4.0
+        ModificaBtn.titleLabel?.textColor = .black
+        
+        SalvaButton.layer.borderWidth = 1
+        SalvaButton.layer.borderColor = UIColor.black.cgColor
+        SalvaButton.layer.backgroundColor = UIColor.random().cgColor
+        SalvaButton.layer.cornerRadius = 10
+        SalvaButton.layer.masksToBounds = false
+        SalvaButton.layer.shadowColor = UIColor.black
+            .cgColor
+        SalvaButton.layer.shadowOpacity = 0.5
+        SalvaButton.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        SalvaButton.layer.shadowRadius = 4.0
+        SalvaButton.titleLabel?.textColor = .black
+        
     }
 
     @IBAction func modifica(_ sender: Any) {

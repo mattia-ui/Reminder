@@ -55,6 +55,19 @@ class RemindersViewController: UIViewController,UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReminderCell", for: indexPath) as! RemindersViewCell
+        
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.random().cgColor
+        cell.layer.backgroundColor = UIColor.random().cgColor
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = false
+        cell.layer.shadowColor = UIColor.black
+            .cgColor
+        cell.layer.shadowOpacity = 0.5
+        cell.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        cell.layer.shadowRadius = 4.0
+
+        
         let reminderItem = remindersArray[indexPath.row]
         cell.TitleLabel.text = reminderItem.title!
         

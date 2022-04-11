@@ -64,9 +64,8 @@
                                     <action selector="salva:" destination="fWD-vY-iUJ" eventType="touchUpInside" id="eVR-hD-c6H"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiB-fj-paL">
-                                <rect key="frame" x="179" y="677" width="62" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiB-fj-paL">
+                                <rect key="frame" x="154" y="724" width="107" height="48"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" imagePlacement="bottom" title="Share">
                                     <imageReference key="image" image="square.and.arrow.up" catalog="system" symbolScale="medium"/>
@@ -87,8 +86,12 @@
                             <constraint firstItem="h2u-Rm-Oc5" firstAttribute="top" secondItem="Cs9-dj-qkL" secondAttribute="top" constant="79" id="Ni5-LV-jZH"/>
                             <constraint firstItem="h2u-Rm-Oc5" firstAttribute="leading" secondItem="2yG-gA-62K" secondAttribute="leading" id="RBa-f9-vbO"/>
                             <constraint firstItem="V6r-0i-Sg4" firstAttribute="baseline" secondItem="1W9-Z7-29c" secondAttribute="firstBaseline" id="U9S-VZ-nUu"/>
+                            <constraint firstItem="Cs9-dj-qkL" firstAttribute="bottom" secondItem="CiB-fj-paL" secondAttribute="bottom" constant="70" id="UTg-fy-FHH"/>
+                            <constraint firstItem="CiB-fj-paL" firstAttribute="leading" secondItem="1W9-Z7-29c" secondAttribute="trailing" id="WxI-pe-Xcf"/>
+                            <constraint firstItem="V6r-0i-Sg4" firstAttribute="leading" secondItem="CiB-fj-paL" secondAttribute="trailing" id="bSv-OY-vdN"/>
                             <constraint firstItem="1W9-Z7-29c" firstAttribute="top" secondItem="aBp-q3-TyP" secondAttribute="bottom" constant="73" id="dqu-fB-9fO"/>
                             <constraint firstItem="Cs9-dj-qkL" firstAttribute="trailing" secondItem="aBp-q3-TyP" secondAttribute="trailing" constant="22" id="fC6-ge-73E"/>
+                            <constraint firstItem="CiB-fj-paL" firstAttribute="top" secondItem="aBp-q3-TyP" secondAttribute="bottom" constant="112" id="l6X-43-VtU"/>
                             <constraint firstItem="Cs9-dj-qkL" firstAttribute="bottom" secondItem="1W9-Z7-29c" secondAttribute="bottom" constant="92" id="mdO-ak-4D0"/>
                             <constraint firstItem="aBp-q3-TyP" firstAttribute="top" secondItem="h2u-Rm-Oc5" secondAttribute="bottom" constant="53" id="o9x-q0-xU1"/>
                             <constraint firstItem="Cs9-dj-qkL" firstAttribute="trailing" secondItem="V6r-0i-Sg4" secondAttribute="trailing" constant="38" id="rcy-ja-ZP2"/>
