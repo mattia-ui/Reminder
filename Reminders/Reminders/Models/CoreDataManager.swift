@@ -51,8 +51,10 @@ class CoreDataManager: NSObject {
         }
     }
     
+    
+    
     ///fetch all the objects from core data
-    class func fetchObj(selectedScopeIdx:Int?=nil,targetText:String?=nil) -> [RemindersItem]{
+    class func fetchObj(selectedScopeIdx:Int?=nil,targetText:String?=nil) -> [RemindersItem] {
         var aray = [RemindersItem]()
         
         let fetchRequest:NSFetchRequest<Reminder> = Reminder.fetchRequest()
@@ -104,28 +106,27 @@ class CoreDataManager: NSObject {
     }
   
     
+   
     
+    class func updateEvent( title: String, titleEdited: String, descrEdited: String) {
+        
+            let context = getContext()
+            var reminder: RemindersItem = fetchObj(selectedScopeIdx: 0, targetText: title)[0]
+            
+            print(reminder.title)
+            reminder.title = titleEdited
+            reminder.description = descrEdited
+            print(reminder.title)
+            do {
+                try context.save()//self.storeObj(title: reminder.title ?? "", description: reminder.description ?? "")
+            }catch {
+                print(error.localizedDescription)
+            }
+        
+        
+        
+    }
     
-//
-//    class func deleteCoreDataItemWithIndex() {
-//
-//        var predicate = NSPredicate(format: "name contains[c] %@", "001")
-//
-//        let fetchRequest:NSFetchRequest<Reminder> = Reminder.fetchRequest()
-//        fetchRequest.predicate = predicate
-//
-//        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
-//
-//        do {
-//            print("deleting all contents")
-//            try getContext().execute(deleteRequest)
-//        }catch {
-//            print(error.localizedDescription)
-//        }
-//
-//
-//    }
-//
     
     
 }

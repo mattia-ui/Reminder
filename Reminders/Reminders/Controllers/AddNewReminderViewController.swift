@@ -26,8 +26,7 @@ class ViewController: UIViewController {
             CoreDataManager.storeObj(title: TitleField.text ?? "", description: DescriptionField!.text ?? "")
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
-        
-        //view.inputAccessoryViewController?.dismissModalViewController(animated: true)
+
         
     }
 

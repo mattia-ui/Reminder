@@ -23,6 +23,8 @@ class RemindersViewController: UIViewController,UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         RemindersTable.delegate = self
+        RemindersTable.separatorStyle = .none
+        RemindersTable.showsVerticalScrollIndicator = false
         updateData()
 
     }

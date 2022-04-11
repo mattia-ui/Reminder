@@ -16,7 +16,7 @@ class ReminderDetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var ModificaBtn: UIButton!
     @IBOutlet weak var SalvaButton: UIButton!
     
-    
+    var diction : Dictionary<String,AnyObject> = ["titolo" : Reminder()]
     var titoloString: String?
     var descrizioneString: String?
     
@@ -35,6 +35,13 @@ class ReminderDetailViewController: UIViewController, UITextFieldDelegate {
         TitoloDetail.addGestureRecognizer(tapGesture)
          
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: Notification.Name("NotificationDismiss"), object: nil)
+
+    }
+    
 
     @IBAction func modifica(_ sender: Any) {
         lblTapped()
@@ -46,12 +53,14 @@ class ReminderDetailViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func salva(_ sender: Any) {
         
-        CoreDataManager.storeObj(title: TitleField.text ?? "", description: DescriptionField.text ?? "")
+        //CoreDataManager.storeObj(title: TitleField.text ?? "", description: DescriptionField.text ?? "")
+        
         SalvaButton.isHidden = true
         SalvaButton.isEnabled = false
         ModificaBtn.isEnabled = true
         ModificaBtn.isHidden = false
         fldTapped()
+        CoreDataManager.updateEvent(title: titoloString ?? "",titleEdited: TitoloDetail.text ?? "", descrEdited: DescrizioneDetail.text ?? "")
     }
     
     func lblTapped(){
