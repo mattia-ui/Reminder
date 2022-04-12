@@ -39,7 +39,7 @@ class RemindersViewController: UIViewController,UITableViewDataSource, UITableVi
     @objc func methodOfReceivedNotification(notification: Notification) {
         updateData()
         RemindersTable.reloadData()
-        
+        //RemindersTable.sectionHeaderTopPadding = 15
     }
 
     
@@ -48,6 +48,7 @@ class RemindersViewController: UIViewController,UITableViewDataSource, UITableVi
     }
 
     // MARK: - Table view data source
+
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return remindersArray.count
@@ -68,7 +69,6 @@ class RemindersViewController: UIViewController,UITableViewDataSource, UITableVi
         cell.layer.shadowOpacity = 0.5
         cell.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
         cell.layer.shadowRadius = 4.0
-
         
         let reminderItem = remindersArray[indexPath.row]
         cell.TitleLabel.text = reminderItem.title!

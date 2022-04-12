@@ -139,14 +139,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Cvy-p7-ob8">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="20" y="88" width="374" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderCell" rowHeight="70" id="ANa-CG-oR8" customClass="RemindersViewCell" customModule="Reminders" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="70"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ANa-CG-oR8" id="JHP-Hg-lTf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titolo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5y-2I-IER">
@@ -179,9 +179,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Cvy-p7-ob8" secondAttribute="bottom" id="R0C-wt-PY0"/>
-                            <constraint firstAttribute="trailing" secondItem="Cvy-p7-ob8" secondAttribute="trailing" id="mgo-6q-oKl"/>
+                            <constraint firstAttribute="trailing" secondItem="Cvy-p7-ob8" secondAttribute="trailing" constant="20" id="mgo-6q-oKl"/>
                             <constraint firstItem="Cvy-p7-ob8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uuU-SR-3Ie"/>
-                            <constraint firstItem="Cvy-p7-ob8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zao-gc-Y26"/>
+                            <constraint firstItem="Cvy-p7-ob8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="zao-gc-Y26"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reminders" id="YAL-t6-4hn">
@@ -202,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="583" y="33"/>
+            <point key="canvasLocation" x="582.60869565217399" y="32.8125"/>
         </scene>
         <!--AddReminder-->
         <scene sceneID="Gci-FK-PNm">
