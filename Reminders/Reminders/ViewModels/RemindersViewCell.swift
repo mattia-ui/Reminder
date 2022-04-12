@@ -12,7 +12,17 @@ class RemindersViewCell: UITableViewCell {
    
     @IBOutlet weak var TitleLabel: UILabel!
     
-    
+    override var frame: CGRect {
+        get {
+            return super.frame
+        }
+        set (newFrame) {
+            var frame =  newFrame
+            frame.origin.y += 4
+            frame.size.height -= 2 * 2
+            super.frame = frame
+        }
+      }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,10 +35,5 @@ class RemindersViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-//        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
-    }
 
 }
