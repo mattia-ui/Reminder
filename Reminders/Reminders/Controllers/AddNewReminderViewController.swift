@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func saveReminder(_ sender: Any) {
-            CoreDataManager.storeObj(title: TitleField.text ?? "", description: DescriptionField!.text ?? "")
+        CoreDataManager.storeObj(title: TitleField.text?.capitalizingFirstLetter() ?? "", description: DescriptionField!.text?.capitalizingFirstLetter() ?? "")
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
 

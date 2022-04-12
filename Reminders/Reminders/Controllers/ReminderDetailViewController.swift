@@ -33,6 +33,9 @@ class ReminderDetailViewController: UIViewController, UITextFieldDelegate {
         tapGesture.numberOfTapsRequired = 1
         DescrizioneDetail.addGestureRecognizer(tapGesture)
         TitoloDetail.addGestureRecognizer(tapGesture)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+       view.addGestureRecognizer(tap)
          
     }
     
@@ -58,7 +61,7 @@ class ReminderDetailViewController: UIViewController, UITextFieldDelegate {
         ModificaBtn.isEnabled = true
         ModificaBtn.isHidden = false
         fldTapped()
-        CoreDataManager.updateEvent(title: titoloString ?? "",titleEdited: TitoloDetail.text ?? "", descrEdited: DescrizioneDetail.text ?? "")
+        CoreDataManager.updateEvent(title: titoloString ?? "",titleEdited: TitoloDetail.text?.capitalizingFirstLetter() ?? "", descrEdited: DescrizioneDetail.text?.capitalizingFirstLetter() ?? "")
     }
     
     func lblTapped(){
@@ -77,11 +80,11 @@ class ReminderDetailViewController: UIViewController, UITextFieldDelegate {
         
         DescrizioneDetail.isHidden = false
         DescriptionField.isHidden = true
-        DescrizioneDetail.text = DescriptionField.text
+        DescrizioneDetail.text = DescriptionField.text?.capitalizingFirstLetter()
         
         TitoloDetail.isHidden = false
         TitleField.isHidden = true
-        TitoloDetail.text = TitleField.text
+        TitoloDetail.text = TitleField.text?.capitalizingFirstLetter()
         
     }
     
@@ -112,6 +115,9 @@ class ReminderDetailViewController: UIViewController, UITextFieldDelegate {
       
     }
     
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     func setUp(){
         
